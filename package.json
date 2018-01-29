@@ -1,0 +1,43 @@
+{
+  "name": "project-lvl2-s177vladislav",
+  "jest": {
+    "modulePathIgnorePatterns": [
+      "<rootDir>/__tests__/__fixtures__"
+    ]
+  },
+  "version": "0.0.18",
+  "description": "",
+  "main": "src/bin/gendiff.js",
+  "scripts": {
+    "babel-node": "babel-node",
+    "eslint": "eslint",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build",
+    "test": "jest"
+  },
+  "bin": {
+    "gendiff": "dist/bin/gendiff.js"
+  },
+  "author": "Vladislav Prokhorov",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "*",
+    "babel-core": "*",
+    "babel-eslint": "*",
+    "babel-preset-env": "*",
+    "babel-preset-stage-0": "*",
+    "eslint": "^4.15.0",
+    "eslint-config-airbnb-base": "*",
+    "eslint-plugin-import": "*",
+    "eslint-plugin-flowtype": "*",
+    "eslint-plugin-jest": "*",
+    "jest": "^21",
+    "jest-cli": "*"
+  },
+  "dependencies": {
+    "commander": "*",
+    "ini": "^1.3.5",
+    "js-yaml": "*",
+    "lodash": "*"
+  }
+}
