@@ -13,16 +13,16 @@ const pathNewIni = '__tests__/__fixtures__/after.ini';
 const pathToResult = '__tests__/__fixtures__/result.txt';
 
 it('test json format', () => {
-  const result = fs.readFileSync(pathToResult, 'utf-8');
-  expect(genDiff(pathOldJson, pathNewJson)).toBe(result);
+  const resultJson = fs.readFileSync(pathToResult, 'utf-8');
+  expect(genDiff(pathOldJson, pathNewJson)).toBe(resultJson);
 });
 
 it('test yaml format', () => {
-  const result = fs.readFileSync(pathToResult, 'utf-8');
-  expect(genDiff(pathOldYaml, pathNewYaml)).toBe(result);
+  const resultYaml = fs.readFileSync(pathToResult, 'utf-8');
+  expect(genDiff(pathOldYaml, pathNewYaml)).toBe(resultYaml);
 });
 
 it('test ini format', () => {
-  const result = fs.readFileSync(pathToResult, 'utf-8');
-  expect(genDiff(pathOldIni, pathNewIni)).toBe(result);
+  const resultIni = fs.readFileSync(pathToResult, 'utf-8');
+  expect(genDiff(pathOldIni, pathNewIni)).toBe(resultIni);
 });
