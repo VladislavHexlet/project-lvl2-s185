@@ -5,7 +5,7 @@
       "<rootDir>/__tests__/__fixtures__"
     ]
   },
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "",
   "main": "src/bin/gendiff.js",
   "scripts": {
