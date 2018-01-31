@@ -3,17 +3,17 @@ import _ from 'lodash';
 const printValue = value => (_.isObject(value) ? 'complex value' : `value: ${value}`);
 
 const plainRender = (ast, accumulateName = '') => {
-  const result = ast.children.map((node) => {
+  const result = ast.map((node) => {
     const name = `${accumulateName}${node.name}`;
     switch (node.type) {
       case 'complex':
-        return `${plainRender(node, `${name}.`)}`;
+        return `${plainRender(node.children, `${name}.`)}`;
       case 'added':
-        return `'${name}' was added with ${printValue(node.value.newValue)}`;
+        return `'${name}' was added with ${printValue(node.newValue)}`;
       case 'removed':
         return `'${name}' was removed`;
       case 'updated':
-        return `'${name}' was updated. From ${node.value.previousValue} to ${node.value.newValue}`;
+        return `'${name}' was updated. From ${node.previousValue} to ${node.newValue}`;
       default:
         return '';
     }

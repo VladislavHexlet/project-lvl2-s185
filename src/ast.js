@@ -12,37 +12,42 @@ const createAst = (oldFile, newFile) => {
         name: key,
         type: 'complex',
         children: createAst(oldFile[key], newFile[key]),
-        value: {},
+        previousValue: '',
+        newValue: '',
       };
     } else if (!_.has(newFile, key)) {
       return {
         name: key,
         type: 'removed',
         children: [],
-        value: { previousValue: oldFile[key], newValue: '' },
+        previousValue: oldFile[key],
+        newValue: '',
       };
     } else if (!_.has(oldFile, key)) {
       return {
         name: key,
         type: 'added',
         children: [],
-        value: { previousValue: '', newValue: newFile[key] },
+        previousValue: '',
+        newValue: newFile[key],
       };
     } else if (_.isEqual(oldFile[key], newFile[key])) {
       return {
         name: key,
         type: 'stayed',
         children: [],
-        value: { previousValue: oldFile[key], newValue: newFile[key] },
+        previousValue: oldFile[key],
+        newValue: newFile[key],
       };
     }
     return {
       name: key,
       type: 'updated',
       children: [],
-      value: { previousValue: oldFile[key], newValue: newFile[key] },
+      previousValue: oldFile[key],
+      newValue: newFile[key],
     };
   });
 };
 
-export default (oldFile, newFile) => ({ children: createAst(oldFile, newFile) });
+export default createAst;

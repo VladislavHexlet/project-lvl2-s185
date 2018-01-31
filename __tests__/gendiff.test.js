@@ -40,6 +40,6 @@ it('test plain format', () => {
 });
 
 it('test output in json format', () => {
-  const resultOutputJsonFormat = '{"children":[{"name":"host","type":"stayed","children":[],"value":{"previousValue":"hexlet.io","newValue":"hexlet.io"}},{"name":"timeout","type":"updated","children":[],"value":{"previousValue":50,"newValue":20}},{"name":"proxy","type":"removed","children":[],"value":{"previousValue":"123.234.53.22","newValue":""}},{"name":"verbose","type":"added","children":[],"value":{"previousValue":"","newValue":true}}]}';
+  const resultOutputJsonFormat = '[{"name":"host","type":"stayed","children":[],"previousValue":"hexlet.io","newValue":"hexlet.io"},{"name":"timeout","type":"updated","children":[],"previousValue":50,"newValue":20},{"name":"proxy","type":"removed","children":[],"previousValue":"123.234.53.22","newValue":""},{"name":"verbose","type":"added","children":[],"previousValue":"","newValue":true}]';
   expect(genDiff(pathOldJsonOutput, pathNewJsonOutput, 'json')).toBe(resultOutputJsonFormat);
 });
