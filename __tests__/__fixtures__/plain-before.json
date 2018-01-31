@@ -1,0 +1,15 @@
+{
+  "timeout": 50,
+  "proxy": "123.234.53.22",
+  "common": {
+    "setting4": "some value",
+    "setting5": "some value",
+    "setting6": {
+      "key": "value"
+    }
+  },
+  "group1": {
+    "baz": "bars"
+  },
+  "group3": "some value"
+}
